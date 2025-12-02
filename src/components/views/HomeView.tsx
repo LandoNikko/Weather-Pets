@@ -21,7 +21,7 @@ const PixiPet: React.FC<PixiPetProps> = ({ pet, isSelected, onClick }) => {
   const timeOffset = useRef(Math.random() * 100);
 
   useEffect(() => {
-    let timeoutId: NodeJS.Timeout;
+    let timeoutId: ReturnType<typeof setTimeout>;
     const updateSize = () => {
       clearTimeout(timeoutId);
       timeoutId = setTimeout(() => {
@@ -161,7 +161,7 @@ export const HomeView: React.FC<HomeViewProps> = ({
   const [dimensions, setDimensions] = useState({ width: window.innerWidth, height: window.innerHeight });
   
   useEffect(() => {
-    let timeoutId: NodeJS.Timeout;
+    let timeoutId: ReturnType<typeof setTimeout>;
     const handleResize = () => {
       clearTimeout(timeoutId);
       timeoutId = setTimeout(() => {

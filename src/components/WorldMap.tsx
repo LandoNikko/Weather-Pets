@@ -19,11 +19,11 @@ export const WorldMap: React.FC<WorldMapProps> = ({ activeCountryNames, onCountr
   const projectionRef = useRef(d3.geoOrthographic().scale(130).translate([140, 140]).clipAngle(90));
   const pathRef = useRef(d3.geoPath().projection(projectionRef.current));
   const rotationTimer = useRef<d3.Timer | null>(null);
-  const interactionTimeout = useRef<NodeJS.Timeout | null>(null);
+  const interactionTimeout = useRef<ReturnType<typeof setTimeout> | null>(null);
 
   const startRotation = useCallback(() => {
      if (rotationTimer.current) return; 
-     rotationTimer.current = d3.timer((elapsed) => {
+     rotationTimer.current = d3.timer(() => {
         const projection = projectionRef.current;
         const path = pathRef.current;
         const rotate = projection.rotate();

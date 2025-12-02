@@ -1,4 +1,4 @@
-export type WeatherCondition = 'Clear' | 'Clouds' | 'Rain' | 'Snow' | 'Thunderstorm' | 'Drizzle' | 'Mist';
+export type WeatherCondition = 'Clear' | 'Clouds' | 'Rain' | 'Snow' | 'Thunderstorm' | 'Drizzle' | 'Mist' | 'PartlyCloudy' | 'Windy' | 'Haze' | 'Dust' | 'Overcast' | 'Fog' | 'Sleet' | 'Wind';
 
 export interface WeatherData {
   location: string;
